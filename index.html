@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin lỗi bé yêu ❤️</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 36px;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .heart {
+            font-size: 50px;
+            color: red;
+            position: absolute;
+            animation: float 3s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #ff4d6d;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ff1e4d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Anh xin lỗi bé yêu 😢</h1>
+        <p>Anh biết anh sai rồi, tha lỗi cho anh nha! 😭</p>
+        <button onclick="alert('Bé tha lỗi cho anh rồi nhé! ❤️')">Tha lỗi cho anh</button>
+    </div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+
+</html>
