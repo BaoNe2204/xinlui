@@ -79,6 +79,15 @@
         button:hover {
             background-color: #ff1e4d;
         }
+
+        .moving-text {
+            font-size: 24px;
+            color: #ff4d6d;
+            font-weight: bold;
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
     </style>
 </head>
 
@@ -88,10 +97,11 @@
         <p>Anh biết anh sai rồi, tha lỗi cho anh nha! 😭</p>
         <button onclick="alert('Bé tha lỗi cho anh rồi nhé! ❤️')">Tha lỗi cho anh</button>
     </div>
+    <div class="moving-text" onclick="moveText(this)" style="top: 50px; left: 50px;">khummmmmmmmmmmmmmmm!</div>
     <script>
         function createHeart() {
             const heart = document.createElement('div');
-            heart.className = 'heart';
+            heart.className = 'heart';a
             heart.innerHTML = '❤️';
             heart.style.left = Math.random() * window.innerWidth + 'px';
             heart.style.top = Math.random() * window.innerHeight + 'px';
@@ -99,6 +109,12 @@
             setTimeout(() => heart.remove(), 3000);
         }
         setInterval(createHeart, 500);
+
+        function moveText(element) {
+            const newX = Math.random() * (window.innerWidth - 100);
+            const newY = Math.random() * (window.innerHeight - 50);
+            element.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
     </script>
 </body>
 
